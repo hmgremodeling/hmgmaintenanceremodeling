@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HMG Maintenance & Remodeling</title>
+  <meta name="description" content="HMG Maintenance & Remodeling provides professional maintenance and remodeling for houses, hotels, and vacation rental properties. Call 850-586-9336 for free estimates." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f5f7;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 12px;
+      padding: 6px;
+    }
+
+    .brand h1 { font-size: 23px; letter-spacing: 1px; }
+    .brand p { color: #fbbf24; font-size: 14px; font-weight: bold; }
+
+    nav a {
+      color: white;
+      margin-left: 16px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a:hover { color: #fbbf24; }
+
+    .hero {
+      min-height: 92vh;
+      background-color: #0f172a;
+      background-image:
+        radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.94));
+      background-size: 40px 40px, cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .hero-logo {
+      width: 195px;
+      max-width: 85%;
+      margin-bottom: 25px;
+      background: white;
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+      animation: fadeZoom 1.2s ease;
+    }
+
+    @keyframes fadeZoom {
+      from { opacity: 0; transform: scale(0.82); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .hero h2 {
+      font-size: 54px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #e5e7eb;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 8px 14px;
+      border-radius: 30px;
+      color: #fef3c7;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary { background: #f59e0b; color: #111827; }
+    .btn-primary:hover { background: #fbbf24; }
+
+    .btn-secondary { background: white; color: #111827; }
+    .btn-secondary:hover { background: #e5e7eb; }
+
+    section { padding: 75px 8%; }
+
+    .section-title { text-align: center; margin-bottom: 45px; }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    .about, .gallery, .reviews, .contact { background: white; }
+
+    .about-grid, .client-grid, .review-grid, .gallery-grid, .service-grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    .about-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: center; }
+
+    .about-card, .service-card, .review-card, .gallery-card, .contact-box {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .about-card {
+      background: #f9fafb;
+      padding: 32px;
+    }
+
+    .about-card h3 { font-size: 25px; margin-bottom: 12px; }
+
+    .highlight-box {
+      background: #111827;
+      color: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+    }
+
+    .highlight-box h3 { color: #fbbf24; margin-bottom: 15px; font-size: 27px; }
+
+    .services { background: #f4f5f7; }
+
+    .service-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .service-card {
+      padding: 30px 22px;
+      border-top: 5px solid #f59e0b;
+    }
+
+    .service-card h3 { margin-bottom: 10px; font-size: 21px; }
+    .service-card p { color: #4b5563; font-size: 15px; }
+
+    .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+    .gallery-card {
+      overflow: hidden;
+      background: #f9fafb;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-card div { padding: 18px; }
+
+    .gallery-card h3 {
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .gallery-card p { color: #4b5563; font-size: 15px; }
+
+    .clients { background: #111827; color: white; }
+
+    .clients .section-title h2 { color: white; }
+    .clients .section-title p { color: #d1d5db; }
+
+    .client-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+    .client-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .client-card h3 { color: #fbbf24; margin-bottom: 10px; }
+
+    .reviews { background: white; }
+
+    .review-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+    .review-card {
+      background: #f9fafb;
+      padding: 28px;
+      border-left: 5px solid #f59e0b;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .review-card p { color: #374151; margin-bottom: 15px; }
+    .review-card strong { color: #111827; }
+
+    .map-section { background: #f4f5f7; }
+
+    .map-box {
+      max-width: 1050px;
+      margin: auto;
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      border-radius: 14px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 { font-size: 38px; margin-bottom: 15px; }
+    .cta p { color: #e5e7eb; margin-bottom: 25px; font-size: 18px; }
+
+    .contact-box {
+      max-width: 830px;
+      margin: auto;
+      padding: 42px;
+      text-align: center;
+    }
+
+    .contact-box h3 { font-size: 30px; margin-bottom: 12px; }
+
+    .phone {
+      font-size: 32px;
+      font-weight: bold;
+      color: #111827;
+      margin: 18px 0;
+    }
+
+    .contact-info {
+      margin-top: 15px;
+      color: #374151;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 8%;
+    }
+
+    footer p { color: #d1d5db; }
+
+    @media (max-width: 768px) {
+      header { text-align: center; justify-content: center; }
+      nav { width: 100%; }
+      nav a { display: inline-block; margin: 7px; }
+      .brand { justify-content: center; }
+      .hero h2 { font-size: 36px; }
+      .hero p { font-size: 18px; }
+      section { padding: 60px 6%; }
+      .contact-box { padding: 28px; }
+      .phone { font-size: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="HMG Maintenance & Remodeling Logo" />
+      <div>
+        <h1>HMG Maintenance & Remodeling</h1>
+        <p>Quality Work • Reliable Service</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#map">Map</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="logo.png" class="hero-logo" alt="HMG Logo" />
+
+      <h2>Professional Maintenance & Remodeling</h2>
+      <p>Serving houses, hotels, rental homes, and vacation rental properties.</p>
+
+      <div class="badges">
+        <span class="badge">Free Estimates</span>
+        <span class="badge">Reliable Service</span>
+        <span class="badge">Quality Work</span>
+      </div>
+
+      <div class="buttons">
+        <a href="tel:18505869336" class="btn btn-primary">Call 850-586-9336</a>
+        <a href="https://wa.me/18505869336" class="btn btn-secondary">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-title">
+      <h2>About HMG</h2>
+      <p>
+        We help property owners keep their homes, hotels, and vacation rentals clean,
+        safe, functional, and ready for guests.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Dependable Property Care</h3>
+        <p>
+          HMG Maintenance & Remodeling provides professional repair, maintenance,
+          and remodeling services with attention to detail and dependable communication.
+          We understand that rental properties and hotels need fast, reliable service.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Free Estimates</h3>
+        <p>
+          Need help with a property repair, hotel maintenance, or remodeling project?
+          Call today and request a free estimate.
+        </p>
+        <br />
+        <a href="tel:18505869336" class="btn btn-primary">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Complete maintenance and remodeling solutions for residential and rental properties.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card"><h3>Home Maintenance</h3><p>General repairs, upkeep, and property maintenance for homes and rental houses.</p></div>
+      <div class="service-card"><h3>Vacation Rental Maintenance</h3><p>Fast, reliable service to keep short-term rentals ready for guests.</p></div>
+      <div class="service-card"><h3>Hotel Maintenance</h3><p>Maintenance support for rooms, bathrooms, common areas, and property repairs.</p></div>
+      <div class="service-card"><h3>Painting</h3><p>Interior and exterior painting for clean, fresh, professional results.</p></div>
+      <div class="service-card"><h3>Drywall</h3><p>Drywall repair, patching, installation, finishing, and texture work.</p></div>
+      <div class="service-card"><h3>Flooring</h3><p>Flooring repair and installation to improve the look and value of your property.</p></div>
+      <div class="service-card"><h3>Kitchen Remodeling</h3><p>Kitchen updates, repairs, improvements, and remodeling services.</p></div>
+      <div class="service-card"><h3>Bathroom Remodeling</h3><p>Bathroom upgrades, repairs, tile work, fixtures, and remodeling projects.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="section-title">
+      <h2>Project Gallery</h2>
+      <p>Examples of the type of work we can help with. Replace these photos with real photos from your jobs when ready.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=900&q=80" alt="Kitchen remodeling">
+        <div><h3>Kitchen Remodeling</h3><p>Clean upgrades and improvements for rental and residential kitchens.</p></div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80" alt="Bathroom remodeling">
+        <div><h3>Bathroom Remodeling</h3><p>Bathroom repairs, fixture updates, tile, and remodeling services.</p></div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=80" alt="Painting service">
+        <div><h3>Painting</h3><p>Interior and exterior painting for homes, rentals, and hotels.</p></div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Property maintenance">
+        <div><h3>Property Maintenance</h3><p>Reliable upkeep for houses, vacation rentals, and managed properties.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients">
+    <div class="section-title">
+      <h2>Properties We Service</h2>
+      <p>We work with homeowners, landlords, property managers, hotels, and vacation rental owners.</p>
+    </div>
+
+    <div class="client-grid">
+      <div class="client-card"><h3>Houses</h3><p>Maintenance, repairs, remodeling, and property improvement.</p></div>
+      <div class="client-card"><h3>Vacation Rentals</h3><p>Quick service to keep rentals repaired and guest-ready.</p></div>
+      <div class="client-card"><h3>Hotels</h3><p>Reliable maintenance for rooms, bathrooms, walls, floors, and more.</p></div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="section-title">
+      <h2>Customer Reviews</h2>
+      <p>Add real customer reviews here as your business grows.</p>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Reliable, professional, and great quality work. Highly recommended for property repairs.”</p>
+        <strong>- Customer Review</strong>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Fast response and excellent service for our rental property maintenance needs.”</p>
+        <strong>- Property Owner</strong>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Great communication and clean work. We will call HMG again for future projects.”</p>
+        <strong>- Homeowner</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="map" class="map-section">
+    <div class="section-title">
+      <h2>Service Area</h2>
+      <p>Serving the Florida Panhandle area. Call to confirm service availability for your property.</p>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Pensacola,%20FL&output=embed">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need Reliable Maintenance?</h2>
+    <p>Call HMG Maintenance & Remodeling today for professional service and free estimates.</p>
+
+    <div class="buttons">
+      <a href="tel:18505869336" class="btn btn-primary">Call 850-586-9336</a>
+      <a href="https://wa.me/18505869336" class="btn btn-secondary">WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-box">
+      <h3>Contact Us</h3>
+      <p>Ready to start your maintenance or remodeling project?</p>
+
+      <div class="phone">850-586-9336</div>
+
+      <p class="contact-info"><strong>Business:</strong> HMG Maintenance & Remodeling</p>
+      <p class="contact-info"><strong>Services:</strong> Houses • Hotels • Vacation Rentals • Remodeling • Repairs</p>
+      <p class="contact-info"><strong>Free Estimates Available</strong></p>
+      <br />
+
+      <a href="tel:18505869336" class="btn btn-primary">Call Now</a>
+      <a href="https://wa.me/18505869336" class="btn btn-secondary">Send WhatsApp</a>
+    </div>
+  </section>
+
+  <a href="https://wa.me/18505869336" class="whatsapp-float">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 HMG Maintenance & Remodeling. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
